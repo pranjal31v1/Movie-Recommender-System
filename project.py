@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Sat Dec 15 21:51:58 2018
+"""Basic movie-rating predictor using linear regression.
 
-@author: pranjal
+The script expects ``IMDB-Movie-Data.csv`` and ``IMDB-Movie-Data 1.csv`` in the
+current directory. It counts the genres associated with each movie to build
+feature vectors, fits a small training set of manually rated titles and then
+predicts scores for all other films.
+
+Run with ``python project.py``.
+
+Dependencies: pandas, numpy, matplotlib and scikit-learn.
 """
 
 import numpy as np
