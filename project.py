@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 dataset =pd.read_csv('IMDB-Movie-Data.csv')
-trainset=pd.read_csv('IMDB-Movie-Data 1.csv')
+trainset=pd.read_csv('IMDB-Movie-Data-1.csv')
 
 impdataset=dataset.iloc[:,[1,2,6,8,10,11]]
 impdataset['Action']=0
