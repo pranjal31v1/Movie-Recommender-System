@@ -119,14 +119,15 @@ traindata=impdataset.iloc[[54,80,117,36,96,249,64,99,124,133],:]
 traindata['Ratingbyme']=[9,9.7,8.5,9.2,7,8,8.2,9,9.5,8] 
 for w in [54,80,117,36,96,249,64,99,124,133]:
    traindata.loc[w,'Ratingbyme']=traindata.loc[w,'Ratingbyme']*p[w]/3   
-X=traindata.iloc[:,6:21].values
+# Use all genre indicator columns as features
+X=traindata.iloc[:,6:22].values
 y=traindata.iloc[:,22].values
     
 from sklearn.linear_model import LinearRegression 
 regressor=LinearRegression()
 regressor.fit(X,y)
     
-impdataset['ratingbyme']=regressor.predict(impdataset.iloc[:,6:21])
+impdataset['ratingbyme']=regressor.predict(impdataset.iloc[:,6:22])
 traindata['ratingbyme1']=regressor.predict(X)
 index=0
 while(index<1000):
